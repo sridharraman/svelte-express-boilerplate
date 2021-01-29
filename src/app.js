@@ -1,18 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
 
 const app = express();
 
-const api = require('./api');
-const { notFound, errorHandler } = require('./middlewares/errors.middleware');
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/public'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
-  });
-}
+import api from './api/index.js';
+import { notFound, errorHandler } from './middlewares/errors.middleware.js';
 
 app.use(express.json());
 app.use(cors());
@@ -24,7 +17,5 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1', api);
-app.use(notFound);
-app.use(errorHandler);
 
-module.exports = app;
+export default app;

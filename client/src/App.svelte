@@ -1,15 +1,37 @@
 <script>
   import { onMount } from 'svelte';
-  import axios from 'axios';
 
-	import List from './components/List.svelte';
-  let emojis = [];
+	import Sidebar from './components/Sidebar.svelte';
+  import SearchBar from './components/SearchBar.svelte';
+  // import Map from './components/Map.svelte';
+  // import GoogleMap from './components/GoogleMap.svelte';
+  import GeomanMap from './components/GeomanMap.svelte';
 
-  onMount(async () => {
-    const { data } = await axios.get('http://localhost:1000/api/v1/emojis');
-    console.log(data.emojis);
-    emojis = data.emojis
-  });
 </script>
 
-<List emojis={emojis} />
+<div class="container mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 m-5">
+    <div class="border p-4 lg:col-span-4">
+      <SearchBar />
+    </div>
+
+    <div class="border p-4 lg:col-span-1 h-screen">
+      Sidebar
+      <Sidebar />
+    </div>
+
+    <div class="border p-4 lg:col-span-3 h-screen mb-5">
+      2/3 columns
+      <!-- <Map /> -->
+      <GeomanMap />
+    </div>
+      
+  </div>
+  
+</div>
+
+<style global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>
