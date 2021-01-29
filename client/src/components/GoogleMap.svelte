@@ -25,7 +25,7 @@
 
 <svelte:head>
   <script defer async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxdyUMrkJLf1nLPm-BADJNnfN2sMkbWl0&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=<key>&callback=initMap">
   </script>
 </svelte:head>
 
