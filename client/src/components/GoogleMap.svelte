@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { googleMapsApiKey } from '../settings.js';
 
   let container;
   let map;
@@ -25,7 +26,7 @@
 
 <svelte:head>
   <script defer async
-  src="https://maps.googleapis.com/maps/api/js?key=<key>&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key={googleMapsApiKey}&callback=initMap">
   </script>
 </svelte:head>
 

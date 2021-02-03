@@ -8,7 +8,6 @@
   import apidata from '../store/apidata.js';
   import filter from '../store/filter.js';
 
-  // import axios from 'axios';
   import { handleFetchErrors } from '../services/error_handlers.js';
 
   let origin = '';
