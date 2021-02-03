@@ -10,17 +10,17 @@
 </script>
 
 <div class="container mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 m-5">
-    <div class="border p-4 lg:col-span-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 m-5">
+    <div class="border p-4 col-span-1 md:col-span-3 lg:col-span-4">
       <SearchBar />
     </div>
 
-    <div class="border p-4 lg:col-span-1 h-screen">
+    <div class="border p-4 col-span-1 md:col-span-3 lg:col-span-1 lg:h-screen">
       Sidebar
       <Sidebar />
     </div>
 
-    <div class="border p-4 lg:col-span-3 h-screen mb-5">
+    <div class="border p-4 md:col-span-3 lg:col-span-3 h-screen mb-5">
       2/3 columns
       <!-- <Map /> -->
       <GeomanMap />
